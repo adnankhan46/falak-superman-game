@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Falak - The SuperMan</title>
+</head>
+<body>
+    
+    <div class="game-container">
+        <!-- Video in game-container -->
+              <video autoplay muted loop width="418px">
+                  <source src="./sky-bg.mp4" type="video/mp4">
+              </video>
+        <h2>Falak - The SuperMan</h2> <br>
+        <h3 id="result"></h3>
+        <div class="score" id="score">Score: 0</div>
+        <div class="balloon" id="balloon"></div>
+        <button onclick="moveBalloon('left')" class="btn-control-l">Move Left</button>
+        <button onclick="moveBalloon('right')" class="btn-control-r">Move Right</button>
+
+        <!-- ... (previous HTML code) -->
+        
+        <!-- <button onclick="moveBalloon('up')" class="btn-control-up">Move Up</button> -->
+        
+        
+        <button id="reset" class="reset-btn">Reset</button>
+                    <!-- Audios -->
+        <audio id="backgroundAudio" loop>
+            <source src="./zara-haule.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+        <audio id="MemeAudio">
+            <source src="./aayein.mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
