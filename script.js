@@ -14,7 +14,7 @@ function moveBalloon(direction) {
 
     const currentLeft = parseFloat(getComputedStyle(balloon).left);
     const currentBottom = parseFloat(getComputedStyle(balloon).bottom);
-    const step = 22;
+    const step = 80;
 
     if (direction === 'left') {
         const newLeft = Math.max(0, currentLeft - step);
@@ -44,8 +44,8 @@ function createStone() {
 
     stone.addEventListener('animationiteration', () => {
         document.body.removeChild(stone);
-        score++;
-        updateScore();
+        // score++;
+        // updateScore();
     });
 
     return stone;
@@ -113,7 +113,10 @@ setInterval(() => {
 }, 3000);
 
 setInterval(() => {
+    if (gamePaused) return;
     checkCollision();
+    score++;
+    updateScore();
 }, 100);
 
 // // Background
