@@ -2,6 +2,7 @@ const balloon = document.getElementById('balloon');
 let score = 0;
 let backgroundAudio = document.getElementById('backgroundAudio');
 let MemeAudio = document.getElementById("MemeAudio");
+let OutAudio = document.getElementById("OutAudio");
 let gamePaused = false;
 
 window.onload = function () {
@@ -83,7 +84,7 @@ function gameOver() {
     balloon.classList.add("balloon-out");
     backgroundAudio.pause();
     MemeAudio.play();
-
+    setTimeout(()=>{OutAudio.play();}, 700)
 }
 
 document.querySelector("#reset").addEventListener("click", ()=>{
@@ -99,7 +100,8 @@ function resetGame() {
     document.querySelector("#result").innerHTML = ``;
     document.querySelector("#reset").classList.remove("reset-btn-show");
     balloon.classList.remove("balloon-out");
-    backgroundAudio.play()
+    backgroundAudio.play();
+    OutAudio.pause();
     balloon.style.left = '50%';
     document.querySelectorAll('.stone').forEach((stone) => {
         document.body.removeChild(stone);
